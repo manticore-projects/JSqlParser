@@ -22,4 +22,3 @@ BEGIN
 END;
 
 --@FAILURE: Encountered unexpected token: "BEGIN" "BEGIN" recorded first on Aug 3, 2021, 7:20:07 AM
---@FAILURE: Encountered unexpected token: "<<" "<<" recorded first on 10 Jun 2022, 15:54:38

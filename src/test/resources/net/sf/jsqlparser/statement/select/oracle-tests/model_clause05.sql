@@ -23,4 +23,3 @@ select country, year, sale, csum
 
 
 --@FAILURE: Encountered unexpected token: "model" <S_IDENTIFIER> recorded first on Aug 3, 2021, 7:20:08 AM
---@FAILURE: select country,year,sale,csum from(select country,year,salex sale from sales_view_ref group by country,year)m recorded first on 10 Jun 2022, 15:49:34

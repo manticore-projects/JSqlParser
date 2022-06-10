@@ -17,4 +17,3 @@ model
   )
 
 --@FAILURE: Encountered unexpected token: "dimension" <S_IDENTIFIER> recorded first on Aug 3, 2021, 7:20:08 AM
---@FAILURE: select dt from(select trunc(sysdate)dt from dual)model recorded first on 10 Jun 2022, 15:49:34

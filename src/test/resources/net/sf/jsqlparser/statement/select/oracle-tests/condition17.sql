@@ -11,4 +11,3 @@ delete from table_name
 where current of cursor_name
 
 --@FAILURE: Encountered unexpected token: "of" "OF" recorded first on Aug 3, 2021, 7:20:08 AM
---@FAILURE: delete from table_name where current recorded first on 10 Jun 2022, 15:49:34

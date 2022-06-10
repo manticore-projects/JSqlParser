@@ -12,4 +12,3 @@ select employee_id from (select employee_id+1 as employee_id from employees)
 
 
 --@FAILURE: Encountered unexpected token: "," "," recorded first on Aug 3, 2021, 7:20:08 AM
---@FAILURE: select employee_id from(select employee_id+1 as employee_id from employees)for update of a recorded first on 10 Jun 2022, 15:49:34

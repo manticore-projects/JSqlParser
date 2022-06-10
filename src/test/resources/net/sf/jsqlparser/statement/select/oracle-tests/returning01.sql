@@ -14,4 +14,3 @@ returning empno
 bulk collect into :empnos
 
 --@FAILURE: Encountered unexpected token: "(" "(" recorded first on Aug 3, 2021, 7:20:08 AM
---@FAILURE: update emp set ename=lower(ename)where job=:jobs recorded first on 10 Jun 2022, 15:49:34

@@ -11,4 +11,3 @@ select (systimestamp - order_date) day(9) to second from orders
 where order_id = 2458
 
 --@FAILURE: Encountered unexpected token: "(" "(" recorded first on Aug 3, 2021, 7:20:08 AM
---@FAILURE: select(systimestamp-order_date)day recorded first on 10 Jun 2022, 15:49:34
