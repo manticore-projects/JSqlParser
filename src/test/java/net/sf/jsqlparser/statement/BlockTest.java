@@ -65,6 +65,10 @@ public class BlockTest {
 
     @Test
     public void testDoBlocks() throws JSQLParserException {
+        TestUtils.assertSqlCanBeParsedAndDeparsed("SELECT \"a\" from dual", true);
+        TestUtils.assertSqlCanBeParsedAndDeparsed("SELECT $$a$$ from dual", true);
+        TestUtils.assertSqlCanBeParsedAndDeparsed("SELECT $a$ from dual", true);
+
         String sqlStr="DO $$DECLARE r record;\n" +
                 "BEGIN\n" +
                 "    FOR r IN SELECT table_schema, table_name FROM information_schema.tables\n" +

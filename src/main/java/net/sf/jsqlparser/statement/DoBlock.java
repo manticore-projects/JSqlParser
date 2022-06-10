@@ -13,11 +13,14 @@ import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * refer to https://www.postgresql.org/docs/current/sql-do.html
  */
 public class DoBlock implements Statement {
+    public static final Pattern codeBlockPattern = Pattern.compile("\\$\\$\\s*((.|\\s)*)\\$\\$");
     private String langName;
     private String code;
 
@@ -27,7 +30,10 @@ public class DoBlock implements Statement {
         this.langName = langName;
         this.code = Objects.requireNonNull(code);
         try {
-            this.statements = CCJSqlParserUtil.parseStatements(code);
+            Matcher m = codeBlockPattern.matcher(this.code);
+            if (m.matches() && m.groupCount()>1) {
+                this.statements = CCJSqlParserUtil.parseStatements(m.group(1));
+            }
         } catch (Exception ignore) {
 
         }
@@ -47,7 +53,10 @@ public class DoBlock implements Statement {
 
     public void setCode(String code) throws JSQLParserException {
         this.code = Objects.requireNonNull(code);
-        this.statements = CCJSqlParserUtil.parseStatements(code);
+        Matcher m = codeBlockPattern.matcher(this.code);
+        if (m.matches() && m.groupCount()>1) {
+            this.statements = CCJSqlParserUtil.parseStatements(m.group(1));
+        }
     }
 
     public Statements getStatements() {
