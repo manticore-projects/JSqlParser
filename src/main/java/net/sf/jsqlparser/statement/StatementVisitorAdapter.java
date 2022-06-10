@@ -151,6 +151,9 @@ public class StatementVisitorAdapter implements StatementVisitor {
     public void visit(Block block) {
     }
 
+    public void visit(DoBlock block) {
+    }
+
     @Override
     public void visit(ValuesStatement values) {
     }

@@ -12,3 +12,4 @@ select * from persons p
        
 
 --@FAILURE: Encountered unexpected token: "is" "IS" recorded first on Aug 3, 2021, 7:20:08 AM
+--@FAILURE: select*from persons p where value(p) recorded first on 10 Jun 2022, 15:49:34

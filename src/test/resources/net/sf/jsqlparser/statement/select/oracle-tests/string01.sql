@@ -23,3 +23,4 @@ from dual
 
 
 --@FAILURE: Encountered unexpected token: "%" "%" recorded first on Aug 3, 2021, 7:20:08 AM
+--@FAILURE: select 'hello','oracle.dbs','jackie''s raincoat','09-mar-98','','''',q '!name like ' recorded first on 10 Jun 2022, 15:49:34

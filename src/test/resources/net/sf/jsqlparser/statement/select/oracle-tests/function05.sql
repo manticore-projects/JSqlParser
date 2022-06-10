@@ -12,3 +12,4 @@ select count(*)
   where lnnvl(commission_pct >= .2)
 
 --@SUCCESSFULLY_PARSED_AND_DEPARSED first on Aug 3, 2021, 7:20:08 AM
+--@FAILURE: select count(*)from employees where lnnvl recorded first on 10 Jun 2022, 15:49:34

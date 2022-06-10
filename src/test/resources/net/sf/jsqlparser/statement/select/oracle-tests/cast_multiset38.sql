@@ -13,3 +13,4 @@ select *
                          varchar2_ntt('b','c','d') )
 
 --@FAILURE: Encountered unexpected token: "(" "(" recorded first on Aug 3, 2021, 7:20:08 AM
+--@FAILURE: select*from table recorded first on 10 Jun 2022, 15:49:34

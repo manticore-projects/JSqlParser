@@ -13,6 +13,8 @@ import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import net.sf.jsqlparser.test.TestUtils;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -59,6 +61,33 @@ public class BlockTest {
         block.setStatements(null);
         assertEquals("BEGIN\n"
                 + "END", block.toString());
+    }
+
+    @Test
+    public void testDoBlocks() throws JSQLParserException {
+        String sqlStr="DO $$DECLARE r record;\n" +
+                "BEGIN\n" +
+                "    FOR r IN SELECT table_schema, table_name FROM information_schema.tables\n" +
+                "             WHERE table_type = 'VIEW' AND table_schema = 'public'\n" +
+                "    LOOP\n" +
+                "        EXECUTE 'GRANT ALL ON ' || quote_ident(r.table_schema) || '.' || quote_ident(r.table_name) || ' TO webuser';\n" +
+                "    END LOOP;\n" +
+                "END$$;";
+
+
+        sqlStr = "DO $$\n" +
+                "    DECLARE example_var varchar := 'something-something';\n" +
+                "    BEGIN\n" +
+                "            INSERT INTO country(code) VALUES ('EE');\n" +
+                "    END $$";
+
+        Statements statements = CCJSqlParserUtil.parseStatements(sqlStr);
+        assertEquals(1, statements.getStatements().size());
+
+        DoBlock block = (DoBlock) statements.getStatements().get(0);
+
+        TestUtils.assertSqlCanBeParsedAndDeparsed(sqlStr, true);
+
     }
 
 }

@@ -838,6 +838,13 @@ public class TablesNamesFinder implements SelectVisitor, FromItemVisitor, Expres
     }
 
     @Override
+    public void visit(DoBlock block) {
+        if (block.getStatements() != null) {
+            visit(block.getStatements());
+        }
+    }
+
+    @Override
     public void visit(Comment comment) {
         if (comment.getTable() != null) {
             visit(comment.getTable());

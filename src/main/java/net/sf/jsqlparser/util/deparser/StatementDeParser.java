@@ -17,6 +17,7 @@ import net.sf.jsqlparser.statement.Commit;
 import net.sf.jsqlparser.statement.CreateFunctionalStatement;
 import net.sf.jsqlparser.statement.DeclareStatement;
 import net.sf.jsqlparser.statement.DescribeStatement;
+import net.sf.jsqlparser.statement.DoBlock;
 import net.sf.jsqlparser.statement.ExplainStatement;
 import net.sf.jsqlparser.statement.IfElseStatement;
 import net.sf.jsqlparser.statement.PurgeStatement;
@@ -279,6 +280,11 @@ public class StatementDeParser extends AbstractDeParser<Statement> implements St
             }
         }
         buffer.append("END");
+    }
+
+    @Override
+    public void visit(DoBlock block) {
+        block.appendTo(buffer);
     }
 
     @Override

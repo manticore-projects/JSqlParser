@@ -92,6 +92,8 @@ public interface StatementVisitor {
 
     void visit(Block block);
 
+    void visit(DoBlock block);
+
     void visit(ValuesStatement values);
 
     void visit(DescribeStatement describe);

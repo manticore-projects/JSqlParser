@@ -17,3 +17,4 @@ begin
 end;
 
 --@FAILURE: Encountered unexpected token: "begin" "BEGIN" recorded first on Aug 3, 2021, 7:20:08 AM
+--@FAILURE: Encountered unexpected token: "forall" <S_IDENTIFIER> recorded first on 10 Jun 2022, 15:54:38
