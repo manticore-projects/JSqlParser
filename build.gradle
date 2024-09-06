@@ -19,7 +19,7 @@ plugins {
 
     id "se.bjurr.gitchangelog.git-changelog-gradle-plugin" version "latest.release"
     id "me.champeau.jmh" version "latest.release"
-    id "com.nwalsh.gradle.saxon.saxon-gradle" version "0.9.6"
+    id "com.nwalsh.gradle.saxon.saxon-gradle" version "0.10.7"
 }
 
 def getVersion = { boolean considerSnapshot ->
